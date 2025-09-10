@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevSnap — AI that recovers revenue in a snap</title>
+    <meta name="description" content="RevSnap's AI voice agents recover failed SaaS payments and abandoned Shopify carts in real time—putting dollars back in your business automatically.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://revsnap.ai/">
+    <meta property="og:title" content="RevSnap — AI that recovers revenue in a snap">
+    <meta property="og:description" content="RevSnap's AI voice agents recover failed SaaS payments and abandoned Shopify carts in real time—putting dollars back in your business automatically.">
+    <meta property="og:image" content="https://revsnap.ai/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://revsnap.ai/">
+    <meta property="twitter:title" content="RevSnap — AI that recovers revenue in a snap">
+    <meta property="twitter:description" content="RevSnap's AI voice agents recover failed SaaS payments and abandoned Shopify carts in real time—putting dollars back in your business automatically.">
+    <meta property="twitter:image" content="https://revsnap.ai/assets/images/og-image.jpg">
+
+    <link rel="canonical" href="https://revsnap.ai/">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "RevSnap",
+                "url": "https://revsnap.ai",
+                "logo": "https://revsnap.ai/assets/images/logo.png",
+                "sameAs": [
+                    "https://linkedin.com/company/revsnap",
+                    "https://twitter.com/revsnap"
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "RevSnap",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "description": "AI voice agents that recover failed SaaS payments and abandoned Shopify carts in real time",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Starter",
+                        "price": "500",
+                        "priceCurrency": "USD",
+                        "billingIncrement": "Monthly"
+                    },
+                    {
+                        "@type": "Offer", 
+                        "name": "Growth",
+                        "price": "1500",
+                        "priceCurrency": "USD",
+                        "billingIncrement": "Monthly"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How do you track recovered revenue?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "For SaaS, we attribute to successful charge retries or plan conversions tied to a RevSnap call event. For Shopify, we attribute to orders completed via link resend, code redemption, or session tags initiated by RevSnap."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Will this conflict with our email/SMS flows?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. RevSnap is additive. We sequence voice after email/SMS to avoid overlap and use suppression windows to prevent over-contacting."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What about compliance (TCPA/DNC)?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We only contact opted-in users or transactional contexts. DNC scrubs and opt-out management are enforced automatically."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What's required to get started?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A Stripe/Chargebee or Shopify connection, your outreach rules, and a 30-minute setup call. Most teams launch in 48 hours."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can we customize the voice and script?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Choose tone, greetings, escalation steps, and incentives per use case."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="/" class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                            <path d="M8 12L16 8L24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z" stroke="white" stroke-width="2"/>
+                            <path d="M12 16L16 18L20 16" stroke="white" stroke-width="2"/>
+                        </svg>
+                        RevSnap
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#product">Product</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#results">Results</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact">Contact</a>
+                </div>
+                <div class="nav-cta">
+                    <button class="btn btn-outline" onclick="openModal('demo-modal')">Book a Demo</button>
+                    <button class="btn btn-primary" onclick="openModal('pilot-modal')">Start Free Pilot</button>
+                </div>
+                <button class="nav-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#product" onclick="closeMobileMenu()">Product</a>
+            <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+            <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+            <a href="#results" onclick="closeMobileMenu()">Results</a>
+            <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+            <a href="/blog" onclick="closeMobileMenu()">Blog</a>
+            <a href="/contact" onclick="closeMobileMenu()">Contact</a>
+            <div class="mobile-cta">
+                <button class="btn btn-outline" onclick="openModal('demo-modal'); closeMobileMenu()">Book a Demo</button>
+                <button class="btn btn-primary" onclick="openModal('pilot-modal'); closeMobileMenu()">Start Free Pilot</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="eyebrow">AI Revenue Recovery</div>
+                    <h1 class="hero-title">Stop losing revenue you've already earned.</h1>
+                    <p class="hero-subtitle">RevSnap calls customers the moment revenue is at risk—fixing failed payments, rescuing abandoned carts, and closing the loop your emails and SMS miss.</p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openModal('demo-modal')">Book a Demo</button>
+                        <button class="btn btn-outline btn-lg" onclick="openModal('pilot-modal')">Start a Free Pilot</button>
+                        <a href="#how-it-works" class="link-arrow">How it works</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="trust-logos">
+                            <img src="/assets/images/stripe-logo.svg" alt="Stripe" loading="lazy">
+                            <img src="/assets/images/chargebee-logo.svg" alt="Chargebee" loading="lazy">
+                            <img src="/assets/images/shopify-logo.svg" alt="Shopify" loading="lazy">
+                            <img src="/assets/images/klaviyo-logo.svg" alt="Klaviyo" loading="lazy">
+                            <img src="/assets/images/attentive-logo.svg" alt="Attentive" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-mockup">
+                        <div class="mockup-left">
+                            <div class="flow-step">
+                                <div class="step-icon failed">💳</div>
+                                <div class="step-text">Failed Payment</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon ai">🤖</div>
+                                <div class="step-text">AI Call</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon success">💰</div>
+                                <div class="step-text">MRR Saved</div>
+                            </div>
+                        </div>
+                        <div class="mockup-right">
+                            <div class="flow-step">
+                                <div class="step-icon cart">🛒</div>
+                                <div class="step-text">Abandoned Cart</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon ai">🤖</div>
+                                <div class="step-text">AI Call</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon success">✅</div>
+                                <div class="step-text">Order Completed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="product" class="problem">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Silent leaks are killing your growth.</h2>
+                    <p>Every SaaS and Shopify brand leaks money through failed cards, churned trials, and carts that never convert. Email and SMS help, but most of your lost revenue slips away without a conversation. RevSnap adds a personal, timely voice that resolves issues in seconds.</p>
+                    <div class="problem-grid">
+                        <div class="problem-item">
+                            <div class="problem-icon">📧</div>
+                            <div class="problem-text">Failed payments and dunning emails go ignored</div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">📱</div>
+                            <div class="problem-text">Cart reminders get buried and blocked</div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">❌</div>
+                            <div class="problem-text">No live conversation to answer objections</div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">💸</div>
+                            <div class="problem-text">Dollars left on the table—every single day</div>
+                        </div>
+                    </div>
+                    <div class="callout">
+                        Add voice. Recover more. Grow faster.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What RevSnap Does Section -->
+        <section class="what-revsnap-does">
+            <div class="container">
+                <div class="section-content">
+                    <h2>A new channel: real conversations that bring money back.</h2>
+                    <div class="two-column">
+                        <div class="column">
+                            <h3>For SaaS (MRR Recovery)</h3>
+                            <ul>
+                                <li>Failed payment callback: update card, retry charge</li>
+                                <li>Trial save: nudge to convert, or switch to annual</li>
+                                <li>Re‑engage dormant users with feature nudges</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h3>For Shopify (Cart Recovery)</h3>
+                            <ul>
+                                <li>Abandoned cart rescue with answers and incentives</li>
+                                <li>Coupon / free‑shipping fulfillment during call</li>
+                                <li>Re‑send secure checkout links via SMS/email</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="note">All calls are recorded, compliant, and auditable. You choose tone, script, and thresholds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Connect. Recover. Report.</h2>
+                    <div class="steps-grid">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Connect</h3>
+                            <p>Plug in Stripe, Chargebee, or Shopify. Set your triggers (failed charge, cart abandon, trial expiring).</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Recover</h3>
+                            <p>RevSnap's AI calls customers in seconds, resolves the issue, and confirms via SMS or email.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Report</h3>
+                            <p>See real‑time dashboards for MRR saved, GMV recovered, and conversion rates—traceable to each call.</p>
+                        </div>
+                    </div>
+                    <div class="data-flow-diagram">
+                        <svg viewBox="0 0 800 200" class="flow-svg">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#3B82F6"/>
+                                </marker>
+                            </defs>
+                            <rect x="20" y="60" width="120" height="80" rx="8" fill="#F1F5F9" stroke="#CBD5E1"/>
+                            <text x="80" y="90" text-anchor="middle" class="diagram-text">Event</text>
+                            <text x="80" y="110" text-anchor="middle" class="diagram-text small">Failed Payment</text>
+                            
+                            <line x1="140" y1="100" x2="200" y2="100" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <rect x="200" y="60" width="120" height="80" rx="8" fill="#3B82F6"/>
+                            <text x="260" y="90" text-anchor="middle" class="diagram-text white">RevSnap AI</text>
+                            <text x="260" y="110" text-anchor="middle" class="diagram-text white small">Voice Call</text>
+                            
+                            <line x1="320" y1="100" x2="380" y2="100" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <rect x="380" y="60" width="140" height="80" rx="8" fill="#22C55E"/>
+                            <text x="450" y="90" text-anchor="middle" class="diagram-text white">Payment Success</text>
+                            <text x="450" y="110" text-anchor="middle" class="diagram-text white small">Checkout Complete</text>
+                            
+                            <line x1="520" y1="100" x2="580" y2="100" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <rect x="580" y="60" width="120" height="80" rx="8" fill="#F1F5F9" stroke="#CBD5E1"/>
+                            <text x="640" y="90" text-anchor="middle" class="diagram-text">Dashboard</text>
+                            <text x="640" y="110" text-anchor="middle" class="diagram-text small">Analytics</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Widget Section -->
+        <section class="demo-widget">
+            <div class="container">
+                <div class="section-content text-center">
+                    <h2>Hear RevSnap in action.</h2>
+                    <p>Launch the interactive demo to experience a recovery call. No credit card required.</p>
+                    <button class="btn btn-primary btn-lg" onclick="startVapiDemo()">Start the Demo</button>
+                    <p class="subtext">Demo is anonymized and for illustration purposes only.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Revenue you can track. ROI you can prove.</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-number">+19%</div>
+                            <div class="metric-label">failed payments recovered (SaaS pilot)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">14%</div>
+                            <div class="metric-label">abandoned carts converted (Shopify pilot)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">2.3×</div>
+                            <div class="metric-label">payback period in first 30 days</div>
+                        </div>
+                    </div>
+                    <div class="case-study-teaser">
+                        <p>"How a $150k MRR SaaS saved $12,500 in one month." <a href="/case-studies" class="link-arrow">View Case Study</a></p>
+                        <p class="note">Replace with real client data as available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Simple, performance‑driven pricing.</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <h3>Starter</h3>
+                            <div class="price">$500/mo + 10% of recovered revenue</div>
+                            <ul class="features">
+                                <li>Up to 2 integrations (e.g., Stripe + Shopify)</li>
+                                <li>1 recovery playbook each (SaaS & Shopify)</li>
+                                <li>Email support</li>
+                            </ul>
+                            <button class="btn btn-outline w-full" onclick="openModal('pilot-modal')">Start Free Pilot</button>
+                        </div>
+                        <div class="pricing-card featured">
+                            <div class="popular-badge">Most Popular</div>
+                            <h3>Growth</h3>
+                            <div class="price">$1,500/mo + 5% of recovered revenue</div>
+                            <ul class="features">
+                                <li>Unlimited integrations</li>
+                                <li>Advanced playbooks (win‑back, annual plan nudge)</li>
+                                <li>Priority support & quarterly optimization</li>
+                            </ul>
+                            <button class="btn btn-primary w-full" onclick="openModal('demo-modal')">Talk to Sales</button>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Enterprise</h3>
+                            <div class="price">Flat fee (custom)</div>
+                            <ul class="features">
+                                <li>Dedicated recovery strategist</li>
+                                <li>Custom compliance + data governance</li>
+                                <li>SSO, SLAs, MSA support</li>
+                            </ul>
+                            <button class="btn btn-outline w-full" onclick="openModal('demo-modal')">Talk to Sales</button>
+                        </div>
+                    </div>
+                    <p class="footnote">All plans include call recording, audit logs, and TCPA‑aware outreach.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations Section -->
+        <section class="integrations">
+            <div class="container">
+                <div class="section-content text-center">
+                    <h2>Fits your stack in minutes.</h2>
+                    <div class="integration-logos">
+                        <div class="logo-chip">Stripe</div>
+                        <div class="logo-chip">Chargebee</div>
+                        <div class="logo-chip">Shopify</div>
+                        <div class="logo-chip">WooCommerce</div>
+                        <div class="logo-chip">Klaviyo</div>
+                        <div class="logo-chip">Attentive</div>
+                        <div class="logo-chip">HubSpot</div>
+                        <div class="logo-chip">Salesforce</div>
+                        <div class="logo-chip">Make/Zapier</div>
+                    </div>
+                    <p>If it emits an event, we can recover it. Use native apps or webhooks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section class="security">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Built for trust.</h2>
+                    <div class="security-grid">
+                        <div class="security-item">
+                            <div class="security-icon">🛡️</div>
+                            <div class="security-text">Consent‑aware outreach and DNC honoring</div>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">📋</div>
+                            <div class="security-text">Opt‑in capture and audit trails</div>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">🔒</div>
+                            <div class="security-text">Data encrypted in transit and at rest</div>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">👥</div>
+                            <div class="security-text">Role‑based access + SSO (Enterprise)</div>
+                        </div>
+                    </div>
+                    <p class="note">RevSnap is not a dialer spam tool. It's a consent‑driven revenue recovery channel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>How do you track recovered revenue?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>For SaaS, we attribute to successful charge retries or plan conversions tied to a RevSnap call event. For Shopify, we attribute to orders completed via link resend, code redemption, or session tags initiated by RevSnap.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>Will this conflict with our email/SMS flows?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. RevSnap is additive. We sequence voice after email/SMS to avoid overlap and use suppression windows to prevent over‑contacting.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>What about compliance (TCPA/DNC)?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We only contact opted‑in users or transactional contexts. DNC scrubs and opt‑out management are enforced automatically.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>What's required to get started?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>A Stripe/Chargebee or Shopify connection, your outreach rules, and a 30‑minute setup call. Most teams launch in 48 hours.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can we customize the voice and script?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes. Choose tone, greetings, escalation steps, and incentives per use case.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="section-content text-center">
+                    <h2>You don't need more leads—you need your money back.</h2>
+                    <p>Stop the silent leaks. Add a voice that recovers what's yours.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="openModal('demo-modal')">Book a Demo</button>
+                        <button class="btn btn-outline btn-lg" onclick="openModal('pilot-modal')">Start Free Pilot</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                            <path d="M8 12L16 8L24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z" stroke="white" stroke-width="2"/>
+                            <path d="M12 16L16 18L20 16" stroke="white" stroke-width="2"/>
+                        </svg>
+                        RevSnap
+                    </div>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#how-it-works">How it works</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#results">Results</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/case-studies">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/legal/privacy">Privacy</a></li>
+                            <li><a href="/legal/terms">Terms</a></li>
+                            <li><a href="/legal/tcpa">TCPA/Consent</a></li>
+                            <li><a href="/legal/dnc">DNC Policy</a></li>
+                            <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; RevSnap. All rights reserved. For opt‑out of SMS or voice messages, reply STOP or email support@revsnap.ai with subject "Opt-Out".</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTAs (Mobile) -->
+    <div class="floating-ctas">
+        <button class="floating-btn demo-btn" onclick="openModal('demo-modal')" title="Book Demo">
+            📅
+        </button>
+        <button class="floating-btn pilot-btn" onclick="openModal('pilot-modal')" title="Start Pilot">
+            🚀
+        </button>
+        <button class="floating-btn chat-btn" onclick="openChat()" title="Chat">
+            💬
+        </button>
+    </div>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book a live demo</h3>
+                <button class="modal-close" onclick="closeModal('demo-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>See how RevSnap recovers MRR and GMV in real time.</p>
+                <form id="demo-form" onsubmit="submitForm(event, 'demo')">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="demo-first-name">First Name*</label>
+                            <input type="text" id="demo-first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-last-name">Last Name*</label>
+                            <input type="text" id="demo-last-name" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-email">Work Email*</label>
+                        <input type="email" id="demo-email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="demo-company">Company*</label>
+                            <input type="text" id="demo-company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-website">Website</label>
+                            <input type="url" id="demo-website" name="website">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-revenue">Monthly Revenue</label>
+                        <select id="demo-revenue" name="revenue">
+                            <option value="">Select range</option>
+                            <option value="0-10k">$0 - $10k</option>
+                            <option value="10k-50k">$10k - $50k</option>
+                            <option value="50k-100k">$50k - $100k</option>
+                            <option value="100k-500k">$100k - $500k</option>
+                            <option value="500k+">$500k+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-use-case">Primary Use Case</label>
+                        <select id="demo-use-case" name="useCase">
+                            <option value="">Select use case</option>
+                            <option value="saas">SaaS</option>
+                            <option value="shopify">Shopify</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-phone">Phone (optional but recommended)</label>
+                        <input type="tel" id="demo-phone" name="phone">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="demo-consent" name="consent" required>
+                        <label for="demo-consent">By providing your phone number and checking this box, you consent to receive SMS messages and/or calls (including by automated technology) from RevSnap related to product information and account support. Message frequency varies. Standard message and data rates may apply. Reply STOP to opt‑out or HELP for help. <a href="/legal/privacy">View our Privacy Policy</a> and <a href="/legal/terms">Terms</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Book Demo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pilot Modal -->
+    <div id="pilot-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start your 30‑day pilot</h3>
+                <button class="modal-close" onclick="closeModal('pilot-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>No setup fee. We'll only charge a % of recovered revenue.</p>
+                <form id="pilot-form" onsubmit="submitForm(event, 'pilot')">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pilot-first-name">First Name*</label>
+                            <input type="text" id="pilot-first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pilot-last-name">Last Name*</label>
+                            <input type="text" id="pilot-last-name" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-email">Work Email*</label>
+                        <input type="email" id="pilot-email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pilot-company">Company*</label>
+                            <input type="text" id="pilot-company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pilot-website">Website</label>
+                            <input type="url" id="pilot-website" name="website">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-revenue">Monthly Revenue</label>
+                        <select id="pilot-revenue" name="revenue">
+                            <option value="">Select range</option>
+                            <option value="0-10k">$0 - $10k</option>
+                            <option value="10k-50k">$10k - $50k</option>
+                            <option value="50k-100k">$50k - $100k</option>
+                            <option value="100k-500k">$100k - $500k</option>
+                            <option value="500k+">$500k+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Integrations (check all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-stripe" name="integrations" value="stripe">
+                                <label for="pilot-stripe">Stripe</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-chargebee" name="integrations" value="chargebee">
+                                <label for="pilot-chargebee">Chargebee</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-shopify" name="integrations" value="shopify">
+                                <label for="pilot-shopify">Shopify</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-other" name="integrations" value="other">
+                                <label for="pilot-other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-estimates">Estimated monthly failed payments / abandoned carts</label>
+                        <input type="text" id="pilot-estimates" name="estimates" placeholder="e.g., 200 failed payments, 1000 abandoned carts">
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-start-date">Preferred start date</label>
+                        <input type="date" id="pilot-start-date" name="startDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-phone">Phone (optional but recommended)</label>
+                        <input type="tel" id="pilot-phone" name="phone">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="pilot-consent" name="consent" required>
+                        <label for="pilot-consent">By providing your phone number and checking this box, you consent to receive SMS messages and/or calls (including by automated technology) from RevSnap related to product information and account support. Message frequency varies. Standard message and data rates may apply. Reply STOP to opt‑out or HELP for help. <a href="/legal/privacy">View our Privacy Policy</a> and <a href="/legal/terms">Terms</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Start Pilot</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Success!</h3>
+                <button class="modal-close" onclick="closeModal('success-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">✅</div>
+                    <p id="success-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Vapi Demo Integration -->
+    <script>
+        function startVapiDemo() {
+            // Placeholder for Vapi integration
+            alert('Demo would launch Vapi widget here. Integration pending.');
+        }
+    </script>
+    
+    <!-- Calendly Integration -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

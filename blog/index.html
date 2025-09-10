@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevSnap Blog — Revenue Recovery Insights</title>
+    <meta name="description" content="Insights, tips, and strategies for maximizing revenue recovery through AI-powered voice calls. Learn from SaaS and ecommerce experts.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://revsnap.ai/blog">
+    <meta property="og:title" content="RevSnap Blog — Revenue Recovery Insights">
+    <meta property="og:description" content="Insights, tips, and strategies for maximizing revenue recovery through AI-powered voice calls. Learn from SaaS and ecommerce experts.">
+    <meta property="og:image" content="https://revsnap.ai/assets/images/blog-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://revsnap.ai/blog">
+    <meta property="twitter:title" content="RevSnap Blog — Revenue Recovery Insights">
+    <meta property="twitter:description" content="Insights, tips, and strategies for maximizing revenue recovery through AI-powered voice calls. Learn from SaaS and ecommerce experts.">
+    <meta property="twitter:image" content="https://revsnap.ai/assets/images/blog-og-image.jpg">
+
+    <link rel="canonical" href="https://revsnap.ai/blog">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="/" class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                            <path d="M8 12L16 8L24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z" stroke="white" stroke-width="2"/>
+                            <path d="M12 16L16 18L20 16" stroke="white" stroke-width="2"/>
+                        </svg>
+                        RevSnap
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/#product">Product</a>
+                    <a href="/#how-it-works">How It Works</a>
+                    <a href="/#pricing">Pricing</a>
+                    <a href="/#results">Results</a>
+                    <a href="/#faq">FAQ</a>
+                    <a href="/blog" class="active">Blog</a>
+                    <a href="/contact">Contact</a>
+                </div>
+                <div class="nav-cta">
+                    <button class="btn btn-outline" onclick="openModal('demo-modal')">Book a Demo</button>
+                    <button class="btn btn-primary" onclick="openModal('pilot-modal')">Start Free Pilot</button>
+                </div>
+                <button class="nav-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="/#product" onclick="closeMobileMenu()">Product</a>
+            <a href="/#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+            <a href="/#pricing" onclick="closeMobileMenu()">Pricing</a>
+            <a href="/#results" onclick="closeMobileMenu()">Results</a>
+            <a href="/#faq" onclick="closeMobileMenu()">FAQ</a>
+            <a href="/blog" onclick="closeMobileMenu()">Blog</a>
+            <a href="/contact" onclick="closeMobileMenu()">Contact</a>
+            <div class="mobile-cta">
+                <button class="btn btn-outline" onclick="openModal('demo-modal'); closeMobileMenu()">Book a Demo</button>
+                <button class="btn btn-primary" onclick="openModal('pilot-modal'); closeMobileMenu()">Start Free Pilot</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Blog Hero -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="section-content text-center">
+                    <h1>Revenue Recovery Insights</h1>
+                    <p>Strategies, tips, and data-driven insights to help you recover more revenue with voice-first outreach.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="featured-article">
+            <div class="container">
+                <div class="featured-card">
+                    <div class="featured-content">
+                        <div class="featured-badge">Featured</div>
+                        <h2><a href="/blog/voice-in-revenue-recovery">Why Voice Is the Missing Piece in Your Recovery Stack</a></h2>
+                        <p>Email and SMS hit limits. Here's how consent‑aware voice fills the gap and brings money back.</p>
+                        <div class="article-meta">
+                            <span class="author">RevSnap Team</span>
+                            <span class="separator">•</span>
+                            <span class="date">January 15, 2025</span>
+                            <span class="separator">•</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                        <a href="/blog/voice-in-revenue-recovery" class="btn btn-primary">Read Article</a>
+                    </div>
+                    <div class="featured-image">
+                        <div class="placeholder-image">
+                            <div class="image-icon">📞</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="blog-grid">
+            <div class="container">
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">
+                                <div class="image-icon">📊</div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-category">Attribution</div>
+                            <h3><a href="/blog/measuring-revenue-recovered">Measuring Revenue Recovered: Attribution That Finance Trusts</a></h3>
+                            <p>Tie every call to dollars with clean attribution for SaaS and Shopify.</p>
+                            <div class="article-meta">
+                                <span class="author">RevSnap Team</span>
+                                <span class="separator">•</span>
+                                <span class="date">January 12, 2025</span>
+                                <span class="separator">•</span>
+                                <span class="read-time">6 min read</span>
+                            </div>
+                            <a href="/blog/measuring-revenue-recovered" class="read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">
+                                <div class="image-icon">🤖</div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-category">AI Strategy</div>
+                            <h3><a href="/blog/fixing-failed-payments-with-ai">From Dunning to Doing: Fixing Failed Payments with AI</a></h3>
+                            <p>A practical playbook for payment retrials, card updates, and annual plan nudges.</p>
+                            <div class="article-meta">
+                                <span class="author">RevSnap Team</span>
+                                <span class="separator">•</span>
+                                <span class="date">January 10, 2025</span>
+                                <span class="separator">•</span>
+                                <span class="read-time">7 min read</span>
+                            </div>
+                            <a href="/blog/fixing-failed-payments-with-ai" class="read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder articles -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">
+                                <div class="image-icon">🛒</div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-category">Ecommerce</div>
+                            <h3><a href="#" onclick="return false;">Cart Abandonment Psychology: Why Customers Leave and How Voice Brings Them Back</a></h3>
+                            <p>Understanding the emotional triggers behind abandoned carts and how AI voice addresses them in real-time.</p>
+                            <div class="article-meta">
+                                <span class="author">RevSnap Team</span>
+                                <span class="separator">•</span>
+                                <span class="date">Coming Soon</span>
+                                <span class="separator">•</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <div class="read-more coming-soon">Coming Soon</div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">
+                                <div class="image-icon">📈</div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-category">SaaS Growth</div>
+                            <h3><a href="#" onclick="return false;">The $50K MRR Milestone: How Voice Recovery Accelerates Growth</a></h3>
+                            <p>Case studies from SaaS companies that scaled faster by plugging revenue leaks with AI voice calls.</p>
+                            <div class="article-meta">
+                                <span class="author">RevSnap Team</span>
+                                <span class="separator">•</span>
+                                <span class="date">Coming Soon</span>
+                                <span class="separator">•</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                            <div class="read-more coming-soon">Coming Soon</div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">
+                                <div class="image-icon">⚖️</div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-category">Compliance</div>
+                            <h3><a href="#" onclick="return false;">TCPA Compliance for Revenue Recovery: A Practical Guide</a></h3>
+                            <p>Navigate consent, opt-ins, and DNC regulations while maximizing your recovery potential.</p>
+                            <div class="article-meta">
+                                <span class="author">RevSnap Team</span>
+                                <span class="separator">•</span>
+                                <span class="date">Coming Soon</span>
+                                <span class="separator">•</span>
+                                <span class="read-time">6 min read</span>
+                            </div>
+                            <div class="read-more coming-soon">Coming Soon</div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">
+                                <div class="image-icon">🎯</div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-category">Best Practices</div>
+                            <h3><a href="#" onclick="return false;">Timing Is Everything: When to Call for Maximum Recovery</a></h3>
+                            <p>Data-driven insights on optimal timing windows for failed payments and abandoned cart recovery calls.</p>
+                            <div class="article-meta">
+                                <span class="author">RevSnap Team</span>
+                                <span class="separator">•</span>
+                                <span class="date">Coming Soon</span>
+                                <span class="separator">•</span>
+                                <span class="read-time">4 min read</span>
+                            </div>
+                            <div class="read-more coming-soon">Coming Soon</div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="newsletter-signup">
+                    <div class="newsletter-content">
+                        <h3>Stay ahead of the recovery curve</h3>
+                        <p>Get weekly insights on revenue recovery, AI voice technology, and growth strategies delivered to your inbox.</p>
+                        <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <p class="newsletter-disclaimer">No spam. Unsubscribe anytime. We respect your privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="blog-cta">
+            <div class="container">
+                <div class="section-content text-center">
+                    <h2>Ready to implement what you've learned?</h2>
+                    <p>Start recovering lost revenue with AI voice calls in less than 48 hours.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="openModal('pilot-modal')">Start Free Pilot</button>
+                        <button class="btn btn-outline btn-lg" onclick="openModal('demo-modal')">Book a Demo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                            <path d="M8 12L16 8L24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z" stroke="white" stroke-width="2"/>
+                            <path d="M12 16L16 18L20 16" stroke="white" stroke-width="2"/>
+                        </svg>
+                        RevSnap
+                    </div>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="/#how-it-works">How it works</a></li>
+                            <li><a href="/#pricing">Pricing</a></li>
+                            <li><a href="/#results">Results</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/case-studies">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/legal/privacy">Privacy</a></li>
+                            <li><a href="/legal/terms">Terms</a></li>
+                            <li><a href="/legal/tcpa">TCPA/Consent</a></li>
+                            <li><a href="/legal/dnc">DNC Policy</a></li>
+                            <li><a href="/legal/cookies">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; RevSnap. All rights reserved. For opt‑out of SMS or voice messages, reply STOP or email support@revsnap.ai with subject "Opt-Out".</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTAs (Mobile) -->
+    <div class="floating-ctas">
+        <button class="floating-btn demo-btn" onclick="openModal('demo-modal')" title="Book Demo">
+            📅
+        </button>
+        <button class="floating-btn pilot-btn" onclick="openModal('pilot-modal')" title="Start Pilot">
+            🚀
+        </button>
+        <button class="floating-btn chat-btn" onclick="openChat()" title="Chat">
+            💬
+        </button>
+    </div>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book a live demo</h3>
+                <button class="modal-close" onclick="closeModal('demo-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>See how RevSnap recovers MRR and GMV in real time.</p>
+                <form id="demo-form" onsubmit="submitForm(event, 'demo')">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="demo-first-name">First Name*</label>
+                            <input type="text" id="demo-first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-last-name">Last Name*</label>
+                            <input type="text" id="demo-last-name" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-email">Work Email*</label>
+                        <input type="email" id="demo-email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="demo-company">Company*</label>
+                            <input type="text" id="demo-company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-website">Website</label>
+                            <input type="url" id="demo-website" name="website">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-revenue">Monthly Revenue</label>
+                        <select id="demo-revenue" name="revenue">
+                            <option value="">Select range</option>
+                            <option value="0-10k">$0 - $10k</option>
+                            <option value="10k-50k">$10k - $50k</option>
+                            <option value="50k-100k">$50k - $100k</option>
+                            <option value="100k-500k">$100k - $500k</option>
+                            <option value="500k+">$500k+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-use-case">Primary Use Case</label>
+                        <select id="demo-use-case" name="useCase">
+                            <option value="">Select use case</option>
+                            <option value="saas">SaaS</option>
+                            <option value="shopify">Shopify</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-phone">Phone (optional but recommended)</label>
+                        <input type="tel" id="demo-phone" name="phone">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="demo-consent" name="consent" required>
+                        <label for="demo-consent">By providing your phone number and checking this box, you consent to receive SMS messages and/or calls (including by automated technology) from RevSnap related to product information and account support. Message frequency varies. Standard message and data rates may apply. Reply STOP to opt‑out or HELP for help. <a href="/legal/privacy">View our Privacy Policy</a> and <a href="/legal/terms">Terms</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Book Demo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pilot Modal -->
+    <div id="pilot-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start your 30‑day pilot</h3>
+                <button class="modal-close" onclick="closeModal('pilot-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>No setup fee. We'll only charge a % of recovered revenue.</p>
+                <form id="pilot-form" onsubmit="submitForm(event, 'pilot')">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pilot-first-name">First Name*</label>
+                            <input type="text" id="pilot-first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pilot-last-name">Last Name*</label>
+                            <input type="text" id="pilot-last-name" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-email">Work Email*</label>
+                        <input type="email" id="pilot-email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pilot-company">Company*</label>
+                            <input type="text" id="pilot-company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pilot-website">Website</label>
+                            <input type="url" id="pilot-website" name="website">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-revenue">Monthly Revenue</label>
+                        <select id="pilot-revenue" name="revenue">
+                            <option value="">Select range</option>
+                            <option value="0-10k">$0 - $10k</option>
+                            <option value="10k-50k">$10k - $50k</option>
+                            <option value="50k-100k">$50k - $100k</option>
+                            <option value="100k-500k">$100k - $500k</option>
+                            <option value="500k+">$500k+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Integrations (check all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-stripe" name="integrations" value="stripe">
+                                <label for="pilot-stripe">Stripe</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-chargebee" name="integrations" value="chargebee">
+                                <label for="pilot-chargebee">Chargebee</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-shopify" name="integrations" value="shopify">
+                                <label for="pilot-shopify">Shopify</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="pilot-other" name="integrations" value="other">
+                                <label for="pilot-other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-estimates">Estimated monthly failed payments / abandoned carts</label>
+                        <input type="text" id="pilot-estimates" name="estimates" placeholder="e.g., 200 failed payments, 1000 abandoned carts">
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-start-date">Preferred start date</label>
+                        <input type="date" id="pilot-start-date" name="startDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="pilot-phone">Phone (optional but recommended)</label>
+                        <input type="tel" id="pilot-phone" name="phone">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="pilot-consent" name="consent" required>
+                        <label for="pilot-consent">By providing your phone number and checking this box, you consent to receive SMS messages and/or calls (including by automated technology) from RevSnap related to product information and account support. Message frequency varies. Standard message and data rates may apply. Reply STOP to opt‑out or HELP for help. <a href="/legal/privacy">View our Privacy Policy</a> and <a href="/legal/terms">Terms</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Start Pilot</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Success!</h3>
+                <button class="modal-close" onclick="closeModal('success-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">✅</div>
+                    <p id="success-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+    function submitNewsletter(e) {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.querySelector('input[type="email"]').value;
+        
+        // Simulate submission
+        form.querySelector('button').textContent = 'Subscribing...';
+        form.querySelector('button').disabled = true;
+        
+        setTimeout(() => {
+            alert('Thanks for subscribing! You\'ll receive our next newsletter within a week.');
+            form.reset();
+            form.querySelector('button').textContent = 'Subscribe';
+            form.querySelector('button').disabled = false;
+        }, 1000);
+    }
+    </script>
+    
+    <style>
+    .blog-hero {
+        padding: 8rem 0 4rem;
+        margin-top: 5rem;
+        background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+    }
+
+    .featured-article {
+        padding: 4rem 0;
+        background: white;
+    }
+
+    .featured-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 3rem;
+        background: #F8FAFC;
+        border-radius: 1rem;
+        border-left: 4px solid #3B82F6;
+    }
+
+    .featured-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #3B82F6;
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .featured-content h2 {
+        margin-bottom: 1rem;
+    }
+
+    .featured-content h2 a {
+        color: #0F172A;
+        text-decoration: none;
+    }
+
+    .featured-content h2 a:hover {
+        color: #3B82F6;
+    }
+
+    .featured-content p {
+        font-size: 1.125rem;
+        color: #475569;
+        margin-bottom: 1.5rem;
+    }
+
+    .featured-image {
+        text-align: center;
+    }
+
+    .placeholder-image {
+        width: 200px;
+        height: 200px;
+        background: #E2E8F0;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .image-icon {
+        font-size: 4rem;
+        opacity: 0.6;
+    }
+
+    .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        color: #64748B;
+        margin-bottom: 1.5rem;
+    }
+
+    .separator {
+        color: #CBD5E1;
+    }
+
+    .blog-grid {
+        padding: 6rem 0;
+        background: #F8FAFC;
+    }
+
+    .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 6rem;
+    }
+
+    .article-card {
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .article-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-image .placeholder-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 0;
+        background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    }
+
+    .article-content {
+        padding: 2rem;
+    }
+
+    .article-category {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: #EFF6FF;
+        color: #3B82F6;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .article-content h3 {
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .article-content h3 a {
+        color: #0F172A;
+        text-decoration: none;
+    }
+
+    .article-content h3 a:hover {
+        color: #3B82F6;
+    }
+
+    .article-content p {
+        color: #475569;
+        margin-bottom: 1rem;
+    }
+
+    .read-more {
+        color: #3B82F6;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .read-more:hover {
+        color: #2563EB;
+    }
+
+    .read-more.coming-soon {
+        color: #94A3B8;
+        cursor: default;
+        font-style: italic;
+    }
+
+    .newsletter-signup {
+        padding: 3rem;
+        background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        border-radius: 1rem;
+        color: white;
+        text-align: center;
+    }
+
+    .newsletter-content h3 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .newsletter-content p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 1rem;
+        max-width: 400px;
+        margin: 0 auto 1rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .newsletter-form input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+
+    .newsletter-disclaimer {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+    }
+
+    .blog-cta {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        color: white;
+    }
+
+    .blog-cta h2,
+    .blog-cta p {
+        color: white;
+    }
+
+    .cta-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+        .featured-card {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .blog-hero {
+            padding: 6rem 0 3rem;
+            margin-top: 4rem;
+        }
+
+        .featured-card {
+            padding: 2rem;
+        }
+
+        .articles-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .newsletter-signup {
+            padding: 2rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    .nav-links a.active {
+        color: #3B82F6;
+        font-weight: 600;
+    }
+    </style>
+</body>
+</html>
